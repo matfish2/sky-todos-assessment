@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 import { addItem } from '../../logic/todos';
 import './styles.css';
 
+const ENTER = 13;
+
 export const ItemCreator = ({ onAdd }) => {
   let inputField;
+
+  function addItem() {
+    inputField.value && onAdd(inputField.value);
+    inputField.value = '';
+  }
 
   return (
     <div className="itemCreator">
@@ -16,15 +23,17 @@ export const ItemCreator = ({ onAdd }) => {
         className="itemCreator-input"
         type="text"
         placeholder="What do you need to do?"
+        onKeyDown={(e)=>{
+          if (e.which===ENTER) {
+            addItem();
+          }
+        }}
       />
       <input
         className="itemCreator-button"
         type="button"
         value="Add Task"
-        onClick={() => {
-          inputField.value && onAdd(inputField.value);
-          inputField.value = '';
-        }}
+        onClick={addItem}
       />
     </div>
   );
