@@ -4,6 +4,9 @@ import { ItemsList } from '../index';
 
 const defaultProps = {
   items: [],
+  onDelete() {},
+  onToggleCompleted() {},
+  showCompleted: true
 };
 
 describe('ItemsList', () => {
