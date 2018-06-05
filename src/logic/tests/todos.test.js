@@ -29,11 +29,11 @@ describe('reducer', () => {
     const state = {
       items: [{ id: 1, content: 'first' }, { id: 2, content: 'second' }],
     };
-    const mockAction = deleteItem(2);
+    const mockAction = deleteItem(1);
     const result = reducer(state, mockAction);
     expect(result.items).toHaveLength(1);
-    expect(result.items[0].id).toEqual(1);
-    expect(result.items[0].content).toEqual('first');
+    expect(result.items[0].id).toEqual(2);
+    expect(result.items[0].content).toEqual('second');
   });
 
   it('should toggle completed state on TOGGLE_COMPLETED', () => {
@@ -64,7 +64,7 @@ describe('reducer', () => {
     expect(hideResult.showCompleted).toBe(false);
 
     state.showCompleted = false;
-    
+
     const showResult = reducer(state, mockAction);
     
     expect(showResult.showCompleted).toBe(true);
