@@ -5,6 +5,13 @@ import { toggleCompletedState, deleteItem } from '../../logic/todos';
 import './styles.css';
 
 export const ItemsList = ({ items, onToggleCompleted, onDelete, showCompleted }) => {
+
+  const itemStyle = (completed) => {
+    return {
+      textDecoration: completed ? 'line-through' : 'none'
+    }
+  }
+  
   return (
     <div>
       <ul className="itemsList-ul">
@@ -32,11 +39,6 @@ ItemsList.propTypes = {
   showCompleted: PropTypes.bool.isRequired
 };
 
-const itemStyle = (completed) => {
-  return {
-    textDecoration: completed ? 'line-through' : 'none'
-  }
-}
 
 const mapStateToProps = (state) => {
   return { items: state.todos.items, showCompleted:state.todos.showCompleted };
