@@ -27,6 +27,9 @@ export const ItemsList = ({ items, onToggleCompleted, onDelete, showCompleted })
 
 ItemsList.propTypes = {
   items: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onToggleCompleted: PropTypes.func.isRequired,
+  showCompleted: PropTypes.bool.isRequired
 };
 
 const itemStyle = (completed) => {
