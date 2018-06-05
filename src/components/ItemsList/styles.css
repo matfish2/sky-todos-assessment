@@ -1,0 +1,15 @@
+.itemsList-ul {
+  text-align:left;
+  list-style-type: none;
+  padding-left:0;
+}
+
+.itemsList-ul li {
+  padding: 5px;
+}
+
+.itemsList-delete {
+  margin-left:10px;
+  color:red;
+  cursor: pointer;
+}

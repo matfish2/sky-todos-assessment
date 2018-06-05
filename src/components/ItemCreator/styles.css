@@ -1,0 +1,14 @@
+.itemCreator {
+  margin-top: 20px;
+  display: flex;
+}
+
+.itemCreator-input {
+  padding:10px;
+  flex:1;
+}
+
+.itemCreator-button {
+  width: 100px;
+  margin-left: 10px;
+}
